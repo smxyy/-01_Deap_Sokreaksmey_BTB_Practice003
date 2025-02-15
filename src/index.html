@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Practice 003</title>
+  <link rel="icon" href="../assets/gif/heart.gif">
+  <link rel="stylesheet" href="./styles/output.css">
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</head>
+<body>
+  <main class="py-5">
+    <h1 class="font-bold text-3xl text-center">Hiiiii teachers, this is my practice 3</h1>
+    <section class="grid grid-cols-2 gap-11 p-[80px]">
+      <section>
+        <h2 class="text-2xl font-bold">Add Task</h2>
+        <form action="" id="task-form" class="flex flex-col gap-3 pt-5">
+          <!-- Task Name -->
+          <div class="flex flex-col gap-2">
+            <label for="task-name" class="font-bold text-slate-700">Task Name</label>
+            <input type="text" id="task-name" name="task-name" placeholder="HRD Homework"
+              class="w-full border-2 border-gray-200 rounded-lg bg-gray-50 py-1.5 pr-8 pl-3 text-base text-gray-800 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-400">
+          </div>
+
+          <!-- Choose Date -->
+          <div class="">
+            <label for="task-date" class="font-bold text-slate-700">Choose Date</label>
+            <div class="relative max-w-sm">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                  </svg>
+              </div>
+              <input id="task-date" datepicker datepicker-autohide datepicker-format="mm-dd-yyyy" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Select date">
+            </div>
+          </div>
+
+          <!-- Priority -->
+          <div class="flex flex-col gap-2">
+            <label for="task-priority" class="font-bold text-slate-700">Priority</label>
+            <div class="mt-2 grid grid-cols-1">
+              <select id="task-priority" name="task-priority" autocomplete="country-name"
+                class="col-start-1 row-start-1 appearance-none w-full border-2 border-gray-200 rounded-lg bg-gray-50 py-1.5 pr-8 pl-3 text-base outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-gray-400">
+                <option value="" selected disabled hidden>Select Priority
+                </option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Add New Task Button -->
+          <div class="pt-3.5">
+            <button id="add-task" class="px-3.5 py-2 bg-blue-700 text-white rounded-lg cursor-pointer">Add New Task</button>
+          </div>
+        </form>
+        <p id="error-message" class="text-red-500 pt-5 text-lg"></p>
+      </section>
+      <section class="">
+        <h2 class="text-2xl font-bold">Task List</h2>
+        <div class="relative overflow-x-auto pt-5">
+          <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" class="px-6 py-3">Task Name</th>
+                <th scope="col" class="px-6 py-3">Due Date</th>
+                <th scope="col" class="px-6 py-3">Priority</th>
+                <th scope="col" class="px-6 py-3">Status</th>
+              </tr>
+            </thead>
+            <tbody id="task-list">
+            </tbody>
+          </table>
+        </div>
+      </section>
+         
+    </section>
+  </main>
+  <script src="./script/index.js"></script>
+</body>
+</html>
+<!-- 
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
+  <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap dark:text-white">Complete JavaScript Project</th>
+  <td class="px-6 py-4 w-32">2023/12/01</td> 
+  <td class="px-6 py-4 font-medium w-32 `${task-priority == 'High' ? text-red-500 : text-amber-400}`">High</td>
+  <td class="px-6 py-4">
+    <div class="flex justify-center items-center">
+      <button id="status-button" class="px-6 py-3 text-white bg-blue-500 rounded-lg focus:outline-none transition-all duration-300 ease-in-out">
+        Pending
+      </button>
+    </div>
+  </td>
+</tr> -->
